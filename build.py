@@ -70,9 +70,10 @@ for (platform_name, archs, ext) in PLATFORMS:
         name = f"{NAME}{SUB1}"
 
         tags = []
+        if PACK_SUPPORT:
+            tags.append("packs")
+
         env = ["GOVCS=*:off"]
-        if not PACK_SUPPORT:
-            tags.append("nopacks")
 
         if GUI:
             args = [
